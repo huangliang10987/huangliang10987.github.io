@@ -1,8 +1,8 @@
 version: 0.1
 environment_variables:
     plaintext:
-        S3_BUCKET: "huangliang10987"
-        BUILD_ENV: "prod"
+        S3_BUCKET: "huangliang10987.com"
+        BUILD_ENV: "dev"
 phases:
     install:
         commands:
