@@ -16,7 +16,7 @@ export class AppComponent {
   ngOnInit() {
     this.image = this.imageRef.nativeElement;
   }
-  onFileChanged(event, image) {
+  onFileChanged(event) {
     const file = event.target.files[0];
     let reader = new FileReader();
     if (file) {
@@ -27,7 +27,7 @@ export class AppComponent {
       component.url = reader.result;
     };
   }
-  onPredict() {
+  onPredict(event) {
     let offset = tf.scalar(127.5);
     let tensor = tf.fromPixels(this.image).resizeNearestNeighbor([224, 224]).toFloat().sub(offset).div(offset).expandDims();
     let component = this;
