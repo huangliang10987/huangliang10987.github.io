@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Liang Huang</title>
@@ -8,8 +9,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@0.13.3/dist/tf.min.js"> </script>
+
+  <!-- Place your code in the script tag below. You can also use an external .js file -->
+  <script>
+    // Notice there is no 'import' statement. 'tf' is available on the index-page
+    // because of the script tag above.
+
+    // Define a model for linear regression.
+    var model;
+    (async () => { model = await tf.loadModel("http://localhost:4200/assets/trained_models/mobilenet/model.json"); })();
+  </script>
 </head>
+
 <body>
   <app-root></app-root>
 </body>
+
 </html>
